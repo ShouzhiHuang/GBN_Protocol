@@ -1,0 +1,370 @@
+Script started on Thu Dec  3 13:28:47 2015
+[?1034hbash-3.2$ script server[C[C[C[C[C[C[C[C[C[C[1P./GBN_Server[C[C[C[C[C[C[C[C[C[Cscript client[C[C[C[C[C[C[C[C[C[C[1P./GBN_Server[C[C[C[C[C[C[C[C[C[Cscript server[C[C[C[C[C[C[C[C[C[C[Kgg[Kcc -o client client.c
+[1mclient.c:157:35: [0m[0;1;35mwarning: [0m[1mformat specifies type 'int *' but the argument has
+      type 'long *' [-Wformat][0m
+    printf("Timeout:");scanf("%d",&Timeout);                     /*ente...
+[0;1;32m                              ~~  ^~~~~~~~
+[0m[0;32m                              %ld
+[0m[1mclient.c:169:71: [0m[0;1;35mwarning: [0m[1mformat specifies type 'unsigned long' but the argument
+      has type 'short' [-Wformat][0m
+  ...%d transmitted with %lu data bytes\n",Send.Seq,Send.Count);
+[0;1;32m                         ~~~                        ^~~~~~~~~~
+[0m[0;32m                         %hd
+[0m[1mclient.c:182:79: [0m[0;1;35mwarning: [0m[1mformat specifies type 'unsigned long' but the argument
+      has type 'short' [-Wformat][0m
+  ...%d transmitted with %lu data bytes\n",Send.Seq,Send.Count);
+[0;1;32m                         ~~~                        ^~~~~~~~~~
+[0m[0;32m                         %hd
+[0m[1mclient.c:269:75: [0m[0;1;35mwarning: [0m[1mpassing 'int *' to parameter of type 'socklen_t *'
+      (aka 'unsigned int *') converts between pointers to integer types with
+      different sign [-Wpointer-sign][0m
+  ...sockaddr *)0,(int *)0);
+[0;1;32m                  ^~~~~~~~
+[0m[1m/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.11.sdk/usr/include/sys/socket.h:592:25: [0m[0;1;30mnote: [0m
+      passing argument to parameter here[0m
+                socklen_t * __restrict) __DARWIN_ALIAS_C(recvfrom);
+[0;1;32m                                      ^
+[0m[1mclient.c:290:75: [0m[0;1;35mwarning: [0m[1mpassing 'int *' to parameter of type 'socklen_t *'
+      (aka 'unsigned int *') converts between pointers to integer types with
+      different sign [-Wpointer-sign][0m
+  ...sockaddr *)0,(int *)0);
+[0;1;32m                  ^~~~~~~~
+[0m[1m/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.11.sdk/usr/include/sys/socket.h:592:25: [0m[0;1;30mnote: [0m
+      passing argument to parameter here[0m
+                socklen_t * __restrict) __DARWIN_ALIAS_C(recvfrom);
+[0;1;32m                                      ^
+[0m[1mclient.c:330:72: [0m[0;1;35mwarning: [0m[1mformat specifies type 'long' but the argument has type
+      'short' [-Wformat][0m
+  ...%d retransmitted with %ld data bytes\n",resend.Seq,resend.Count);
+[0;1;32m                           ~~~                          ^~~~~~~~~~~~
+[0m[0;32m                           %hd
+[0m6 warnings generated.
+bash-3.2$ ./client
+please enter configuration:
+Window Size:1
+Timeout:5
+Packet 0 transmitted with 16 data bytes
+ACK 0 received
+Packet 1 transmitted with 32 data bytes
+ACK 1 received
+Packet 2 transmitted with 14 data bytes
+ACK 2 received
+Packet 3 transmitted with 2 data bytes
+ACK 3 received
+Packet 4 transmitted with 17 data bytes
+ACK 4 received
+Packet 5 transmitted with 11 data bytes
+ACK 5 received
+Packet 6 transmitted with 64 data bytes
+ACK 6 received
+Packet 7 transmitted with 60 data bytes
+ACK 7 received
+Packet 8 transmitted with 29 data bytes
+ACK 8 received
+Packet 9 transmitted with 2 data bytes
+ACK 9 received
+Packet 10 transmitted with 11 data bytes
+ACK 10 received
+Packet 11 transmitted with 2 data bytes
+ACK 11 received
+Packet 12 transmitted with 80 data bytes
+ACK 12 received
+Packet 13 transmitted with 1 data bytes
+ACK 13 received
+Packet 14 transmitted with 78 data bytes
+ACK 14 received
+Packet 15 transmitted with 42 data bytes
+ACK 15 received
+Packet 0 transmitted with 79 data bytes
+ACK 0 received
+Packet 1 transmitted with 79 data bytes
+ACK 1 received
+Packet 2 transmitted with 37 data bytes
+ACK 2 received
+Packet 3 transmitted with 80 data bytes
+ACK 3 received
+Packet 4 transmitted with 51 data bytes
+ACK 4 received
+Packet 5 transmitted with 55 data bytes
+ACK 5 received
+Packet 6 transmitted with 24 data bytes
+ACK 6 received
+Packet 7 transmitted with 2 data bytes
+ACK 7 received
+Packet 8 transmitted with 2 data bytes
+ACK 8 received
+Packet 9 transmitted with 18 data bytes
+ACK 9 received
+Packet 10 transmitted with 62 data bytes
+ACK 10 received
+Packet 11 transmitted with 62 data bytes
+ACK 11 received
+Packet 12 transmitted with 62 data bytes
+ACK 12 received
+Packet 13 transmitted with 62 data bytes
+ACK 13 received
+Packet 14 transmitted with 62 data bytes
+ACK 14 received
+Packet 15 transmitted with 62 data bytes
+ACK 15 received
+Packet 0 transmitted with 62 data bytes
+ACK 0 received
+Packet 1 transmitted with 62 data bytes
+ACK 1 received
+Packet 2 transmitted with 16 data bytes
+ACK 2 received
+Packet 3 transmitted with 2 data bytes
+ACK 3 received
+Packet 4 transmitted with 39 data bytes
+ACK 4 received
+Packet 5 transmitted with 30 data bytes
+ACK 5 received
+Packet 6 transmitted with 46 data bytes
+ACK 6 received
+Packet 7 transmitted with 44 data bytes
+ACK 7 received
+End of Transmission Packet with sequence number 8 transmitted with 0 data bytes
+Number of data packets transmitted:40
+Total number of data bytes transmitted:1561
+Total number of retransmissions:0
+Total number of data packets transmitted:40
+Number of ACKs received:40
+Count of how many times timeout expired:0
+bash-3.2$ ./client
+please enter configuration:
+Window Size:4
+Timeout:5
+Packet 0 transmitted with 16 data bytes
+Packet 1 transmitted with 32 data bytes
+Packet 2 transmitted with 14 data bytes
+Packet 3 transmitted with 2 data bytes
+Timeout expired for packet numbered 0
+Packet 0 retransmitted with 16 data bytes
+Packet 1 retransmitted with 32 data bytes
+Packet 2 retransmitted with 14 data bytes
+Packet 3 retransmitted with 2 data bytes
+Timeout expired for packet numbered 0
+Packet 0 retransmitted with 16 data bytes
+Packet 1 retransmitted with 32 data bytes
+Packet 2 retransmitted with 14 data bytes
+Packet 3 retransmitted with 2 data bytes
+Timeout expired for packet numbered 0
+Packet 0 retransmitted with 16 data bytes
+Packet 1 retransmitted with 32 data bytes
+Packet 2 retransmitted with 14 data bytes
+Packet 3 retransmitted with 2 data bytes
+Timeout expired for packet numbered 0
+Packet 0 retransmitted with 16 data bytes
+Packet 1 retransmitted with 32 data bytes
+Packet 2 retransmitted with 14 data bytes
+Packet 3 retransmitted with 2 data bytes
+Timeout expired for packet numbered 0
+Packet 0 retransmitted with 16 data bytes
+Packet 1 retransmitted with 32 data bytes
+Packet 2 retransmitted with 14 data bytes
+Packet 3 retransmitted with 2 data bytes
+Timeout expired for packet numbered 0
+Packet 0 retransmitted with 16 data bytes
+Packet 1 retransmitted with 32 data bytes
+Packet 2 retransmitted with 14 data bytes
+Packet 3 retransmitted with 2 data bytes
+Timeout expired for packet numbered 0
+Packet 0 retransmitted with 16 data bytes
+Packet 1 retransmitted with 32 data bytes
+Packet 2 retransmitted with 14 data bytes
+Packet 3 retransmitted with 2 data bytes
+Timeout expired for packet numbered 0
+Packet 0 retransmitted with 16 data bytes
+Packet 1 retransmitted with 32 data bytes
+Packet 2 retransmitted with 14 data bytes
+Packet 3 retransmitted with 2 data bytes
+Timeout expired for packet numbered 0
+Packet 0 retransmitted with 16 data bytes
+Packet 1 retransmitted with 32 data bytes
+Packet 2 retransmitted with 14 data bytes
+Packet 3 retransmitted with 2 data bytes
+Timeout expired for packet numbered 0
+Packet 0 retransmitted with 16 data bytes
+Packet 1 retransmitted with 32 data bytes
+Packet 2 retransmitted with 14 data bytes
+Packet 3 retransmitted with 2 data bytes
+Timeout expired for packet numbered 0
+Packet 0 retransmitted with 16 data bytes
+Packet 1 retransmitted with 32 data bytes
+Packet 2 retransmitted with 14 data bytes
+Packet 3 retransmitted with 2 data bytes
+Timeout expired for packet numbered 0
+Packet 0 retransmitted with 16 data bytes
+Packet 1 retransmitted with 32 data bytes
+Packet 2 retransmitted with 14 data bytes
+Packet 3 retransmitted with 2 data bytes
+Timeout expired for packet numbered 0
+Packet 0 retransmitted with 16 data bytes
+Packet 1 retransmitted with 32 data bytes
+Packet 2 retransmitted with 14 data bytes
+Packet 3 retransmitted with 2 data bytes
+Timeout expired for packet numbered 0
+Packet 0 retransmitted with 16 data bytes
+Packet 1 retransmitted with 32 data bytes
+Packet 2 retransmitted with 14 data bytes
+Packet 3 retransmitted with 2 data bytes
+Timeout expired for packet numbered 0
+Packet 0 retransmitted with 16 data bytes
+Packet 1 retransmitted with 32 data bytes
+Packet 2 retransmitted with 14 data bytes
+Packet 3 retransmitted with 2 data bytes
+Timeout expired for packet numbered 0
+Packet 0 retransmitted with 16 data bytes
+Packet 1 retransmitted with 32 data bytes
+Packet 2 retransmitted with 14 data bytes
+Packet 3 retransmitted with 2 data bytes
+Timeout expired for packet numbered 0
+Packet 0 retransmitted with 16 data bytes
+Packet 1 retransmitted with 32 data bytes
+Packet 2 retransmitted with 14 data bytes
+Packet 3 retransmitted with 2 data bytes
+Timeout expired for packet numbered 0
+Packet 0 retransmitted with 16 data bytes
+Packet 1 retransmitted with 32 data bytes
+Packet 2 retransmitted with 14 data bytes
+Packet 3 retransmitted with 2 data bytes
+Timeout expired for packet numbered 0
+Packet 0 retransmitted with 16 data bytes
+Packet 1 retransmitted with 32 data bytes
+Packet 2 retransmitted with 14 data bytes
+Packet 3 retransmitted with 2 data bytes
+Timeout expired for packet numbered 0
+Packet 0 retransmitted with 16 data bytes
+Packet 1 retransmitted with 32 data bytes
+Packet 2 retransmitted with 14 data bytes
+Packet 3 retransmitted with 2 data bytes
+Timeout expired for packet numbered 0
+Packet 0 retransmitted with 16 data bytes
+Packet 1 retransmitted with 32 data bytes
+Packet 2 retransmitted with 14 data bytes
+Packet 3 retransmitted with 2 data bytes
+Timeout expired for packet numbered 0
+Packet 0 retransmitted with 16 data bytes
+Packet 1 retransmitted with 32 data bytes
+Packet 2 retransmitted with 14 data bytes
+Packet 3 retransmitted with 2 data bytes
+Timeout expired for packet numbered 0
+Packet 0 retransmitted with 16 data bytes
+Packet 1 retransmitted with 32 data bytes
+Packet 2 retransmitted with 14 data bytes
+Packet 3 retransmitted with 2 data bytes
+Timeout expired for packet numbered 0
+Packet 0 retransmitted with 16 data bytes
+Packet 1 retransmitted with 32 data bytes
+Packet 2 retransmitted with 14 data bytes
+Packet 3 retransmitted with 2 data bytes
+Timeout expired for packet numbered 0
+Packet 0 retransmitted with 16 data bytes
+Packet 1 retransmitted with 32 data bytes
+Packet 2 retransmitted with 14 data bytes
+Packet 3 retransmitted with 2 data bytes
+Timeout expired for packet numbered 0
+Packet 0 retransmitted with 16 data bytes
+Packet 1 retransmitted with 32 data bytes
+Packet 2 retransmitted with 14 data bytes
+Packet 3 retransmitted with 2 data bytes
+Timeout expired for packet numbered 0
+Packet 0 retransmitted with 16 data bytes
+Packet 1 retransmitted with 32 data bytes
+Packet 2 retransmitted with 14 data bytes
+Packet 3 retransmitted with 2 data bytes
+Timeout expired for packet numbered 0
+Packet 0 retransmitted with 16 data bytes
+Packet 1 retransmitted with 32 data bytes
+Packet 2 retransmitted with 14 data bytes
+Packet 3 retransmitted with 2 data bytes
+Timeout expired for packet numbered 0
+Packet 0 retransmitted with 16 data bytes
+Packet 1 retransmitted with 32 data bytes
+Packet 2 retransmitted with 14 data bytes
+Packet 3 retransmitted with 2 data bytes
+Timeout expired for packet numbered 0
+Packet 0 retransmitted with 16 data bytes
+Packet 1 retransmitted with 32 data bytes
+Packet 2 retransmitted with 14 data bytes
+Packet 3 retransmitted with 2 data bytes
+Timeout expired for packet numbered 0
+Packet 0 retransmitted with 16 data bytes
+Packet 1 retransmitted with 32 data bytes
+Packet 2 retransmitted with 14 data bytes
+Packet 3 retransmitted with 2 data bytes
+Timeout expired for packet numbered 0
+Packet 0 retransmitted with 16 data bytes
+Packet 1 retransmitted with 32 data bytes
+Packet 2 retransmitted with 14 data bytes
+Packet 3 retransmitted with 2 data bytes
+Timeout expired for packet numbered 0
+Packet 0 retransmitted with 16 data bytes
+Packet 1 retransmitted with 32 data bytes
+Packet 2 retransmitted with 14 data bytes
+Packet 3 retransmitted with 2 data bytes
+Timeout expired for packet numbered 0
+Packet 0 retransmitted with 16 data bytes
+Packet 1 retransmitted with 32 data bytes
+Packet 2 retransmitted with 14 data bytes
+Packet 3 retransmitted with 2 data bytes
+Timeout expired for packet numbered 0
+Packet 0 retransmitted with 16 data bytes
+Packet 1 retransmitted with 32 data bytes
+Packet 2 retransmitted with 14 data bytes
+Packet 3 retransmitted with 2 data bytes
+Timeout expired for packet numbered 0
+Packet 0 retransmitted with 16 data bytes
+Packet 1 retransmitted with 32 data bytes
+Packet 2 retransmitted with 14 data bytes
+Packet 3 retransmitted with 2 data bytes
+Timeout expired for packet numbered 0
+Packet 0 retransmitted with 16 data bytes
+Packet 1 retransmitted with 32 data bytes
+Packet 2 retransmitted with 14 data bytes
+Packet 3 retransmitted with 2 data bytes
+Timeout expired for packet numbered 0
+Packet 0 retransmitted with 16 data bytes
+Packet 1 retransmitted with 32 data bytes
+Packet 2 retransmitted with 14 data bytes
+Packet 3 retransmitted with 2 data bytes
+Timeout expired for packet numbered 0
+Packet 0 retransmitted with 16 data bytes
+Packet 1 retransmitted with 32 data bytes
+Packet 2 retransmitted with 14 data bytes
+Packet 3 retransmitted with 2 data bytes
+Timeout expired for packet numbered 0
+Packet 0 retransmitted with 16 data bytes
+Packet 1 retransmitted with 32 data bytes
+Packet 2 retransmitted with 14 data bytes
+Packet 3 retransmitted with 2 data bytes
+Timeout expired for packet numbered 0
+Packet 0 retransmitted with 16 data bytes
+Packet 1 retransmitted with 32 data bytes
+Packet 2 retransmitted with 14 data bytes
+Packet 3 retransmitted with 2 data bytes
+Timeout expired for packet numbered 0
+Packet 0 retransmitted with 16 data bytes
+Packet 1 retransmitted with 32 data bytes
+Packet 2 retransmitted with 14 data bytes
+Packet 3 retransmitted with 2 data bytes
+Timeout expired for packet numbered 0
+Packet 0 retransmitted with 16 data bytes
+Packet 1 retransmitted with 32 data bytes
+Packet 2 retransmitted with 14 data bytes
+Packet 3 retransmitted with 2 data bytes
+Timeout expired for packet numbered 0
+Packet 0 retransmitted with 16 data bytes
+Packet 1 retransmitted with 32 data bytes
+Packet 2 retransmitted with 14 data bytes
+Packet 3 retransmitted with 2 data bytes
+Timeout expired for packet numbered 0
+Packet 0 retransmitted with 16 data bytes
+Packet 1 retransmitted with 32 data bytes
+Packet 2 retransmitted with 14 data bytes
+Packet 3 retransmitted with 2 data bytes
+^C
+bash-3.2$ exit
+exit
+
+Script done on Thu Dec  3 13:34:49 2015

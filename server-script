@@ -1,0 +1,726 @@
+Script started on Thu Dec  3 13:30:06 2015
+[?1034hbash-3.2$ gcc -o server server.c
+[1mserver.c:186:83: [0m[0;1;35mwarning: [0m[1mformat specifies type 'int' but the argument has type
+      'long' [-Wformat][0m
+  ...bytes received which are delivered to user:%d\n",total_bytes_n);/* witho...
+[0;1;32m                                                ~~    ^~~~~~~~~~~~~
+[0m[0;32m                                                %ld
+[0m[1mserver.c:200:5: [0m[0;1;35mwarning: [0m[1mimplicit declaration of function 'gettimeofday' is
+      invalid in C99 [-Wimplicit-function-declaration][0m
+    gettimeofday(&current_t,NULL);   
+[0;1;32m    ^
+[0m2 warnings generated.
+bash-3.2$ ./server
+please enter configuration:
+Packet Loss Rate:0
+Packet Delay:0
+ACK Loss Rate:0
+Waiting for incoming messages on port 65100
+
+0.563167
+Packet 0 received with 16 data bytes
+\begin{center}
+
+Packet 0 delivered to user
+0.563856
+0.563887
+ACK 0 transmitted
+0.564686
+Packet 1 received with 32 data bytes
+{\bf PROGRAMMING PROJECT 2\\ }
+
+Packet 1 delivered to user
+0.564842
+0.564866
+ACK 1 transmitted
+0.565578
+Packet 2 received with 14 data bytes
+\end{center}
+
+Packet 2 delivered to user
+0.565773
+0.565797
+ACK 2 transmitted
+0.566478
+Packet 3 received with 2 data bytes
+
+
+Packet 3 delivered to user
+0.566634
+0.566658
+ACK 3 transmitted
+0.567260
+Packet 4 received with 17 data bytes
+%\vspace{0.3in}
+
+Packet 4 delivered to user
+0.567417
+0.567448
+ACK 4 transmitted
+0.568137
+Packet 5 received with 11 data bytes
+\noindent
+
+Packet 5 delivered to user
+0.568317
+0.568340
+ACK 5 transmitted
+0.569006
+Packet 6 received with 64 data bytes
+{\bf This project is an individual assignment and must be done
+
+Packet 6 delivered to user
+0.569186
+0.569209
+ACK 6 transmitted
+0.569812
+Packet 7 received with 60 data bytes
+independently by each student. No late submissions will be
+
+Packet 7 delivered to user
+0.569976
+0.570000
+ACK 7 transmitted
+0.570634
+Packet 8 received with 29 data bytes
+accepted for this project.}
+
+Packet 8 delivered to user
+0.570798
+0.570821
+ACK 8 transmitted
+0.571620
+Packet 9 received with 2 data bytes
+
+
+Packet 9 delivered to user
+0.571792
+0.571815
+ACK 9 transmitted
+0.582600
+Packet 10 received with 11 data bytes
+\noindent
+
+Packet 10 delivered to user
+0.582811
+0.582835
+ACK 10 transmitted
+0.583954
+Packet 11 received with 2 data bytes
+
+
+Packet 11 delivered to user
+0.584204
+0.584251
+ACK 11 transmitted
+0.585105
+Packet 12 received with 80 data bytes
+In this project, you will implement a Transport Layer protocol to transmit data
+Packet 12 delivered to user
+0.585316
+0.585355
+ACK 12 transmitted
+0.586153
+Packet 13 received with 1 data bytes
+
+
+Packet 13 delivered to user
+0.586318
+0.586341
+ACK 13 transmitted
+0.587061
+Packet 14 received with 78 data bytes
+with Reliable Data Transfer from a client (Sender) to a server (Receiver) in
+
+Packet 14 delivered to user
+0.587194
+0.587218
+ACK 14 transmitted
+0.587899
+Packet 15 received with 42 data bytes
+the presence of channel errors and loss.
+
+Packet 15 delivered to user
+0.588039
+0.588063
+ACK 15 transmitted
+0.588799
+Packet 0 received with 79 data bytes
+The protocol to be implemented by you is the Go-Back-N protocol. The protocol
+
+Packet 0 delivered to user
+0.588885
+0.588900
+ACK 0 transmitted
+0.589260
+Packet 1 received with 79 data bytes
+will be unidirectional in which data is sent in one direction only (client to
+
+Packet 1 delivered to user
+0.589354
+0.589362
+ACK 1 transmitted
+0.589863
+Packet 2 received with 37 data bytes
+server) with acknowledgements being
+
+Packet 2 delivered to user
+0.589949
+0.589965
+ACK 2 transmitted
+0.590450
+Packet 3 received with 80 data bytes
+sent in the reverse direction (server to client). Only positive ACKs are used.
+
+Packet 3 delivered to user
+0.590536
+0.590544
+ACK 3 transmitted
+0.590920
+Packet 4 received with 51 data bytes
+The transmission of packets will be done over UDP
+
+Packet 4 delivered to user
+0.591006
+0.591013
+ACK 4 transmitted
+0.591460
+Packet 5 received with 55 data bytes
+(that represents an unreliable network layer channel)
+
+Packet 5 delivered to user
+0.591538
+0.591553
+ACK 5 transmitted
+0.592023
+Packet 6 received with 24 data bytes
+using fixed UDP ports.
+
+Packet 6 delivered to user
+0.592125
+0.592140
+ACK 6 transmitted
+0.592532
+Packet 7 received with 2 data bytes
+
+
+Packet 7 delivered to user
+0.592634
+0.592641
+ACK 7 transmitted
+0.593001
+Packet 8 received with 2 data bytes
+
+
+Packet 8 delivered to user
+0.593095
+0.593111
+ACK 8 transmitted
+0.593565
+Packet 9 received with 18 data bytes
+\begin{verbatim}
+
+Packet 9 delivered to user
+0.593674
+0.593690
+ACK 9 transmitted
+0.594191
+Packet 10 received with 62 data bytes
+    <----------------- 16 bits (2 bytes) ------------------>
+
+Packet 10 delivered to user
+0.594293
+0.594308
+ACK 10 transmitted
+0.594911
+Packet 11 received with 62 data bytes
+    --------------------------------------------------------
+
+Packet 11 delivered to user
+0.595005
+0.595021
+ACK 11 transmitted
+0.595490
+Packet 12 received with 62 data bytes
+    |              Count (no. of data bytes)               |
+
+Packet 12 delivered to user
+0.595584
+0.595600
+ACK 12 transmitted
+0.596069
+Packet 13 received with 62 data bytes
+    --------------------------------------------------------
+
+Packet 13 delivered to user
+0.596155
+0.596171
+ACK 13 transmitted
+0.596609
+Packet 14 received with 62 data bytes
+    |                Packet Sequence Number                |
+
+Packet 14 delivered to user
+0.596703
+0.596719
+ACK 14 transmitted
+0.597188
+Packet 15 received with 62 data bytes
+    --------------------------------------------------------
+
+Packet 15 delivered to user
+0.597282
+0.597290
+ACK 15 transmitted
+0.597768
+Packet 0 received with 62 data bytes
+    |            Data Bytes      |          ...            |
+
+Packet 0 delivered to user
+0.597893
+0.597916
+ACK 0 transmitted
+0.598386
+Packet 1 received with 62 data bytes
+    --------------------------------------------------------
+
+Packet 1 delivered to user
+0.598472
+0.598488
+ACK 1 transmitted
+0.598855
+Packet 2 received with 16 data bytes
+\end{verbatim}
+
+Packet 2 delivered to user
+0.598942
+0.598957
+ACK 2 transmitted
+0.599638
+Packet 3 received with 2 data bytes
+
+
+Packet 3 delivered to user
+0.599779
+0.599810
+ACK 3 transmitted
+0.600593
+Packet 4 received with 39 data bytes
+The second field of the header is the
+
+Packet 4 delivered to user
+0.600695
+0.600710
+ACK 4 transmitted
+0.601125
+Packet 5 received with 30 data bytes
+packet sequence number. Each
+
+Packet 5 delivered to user
+0.601211
+0.601227
+ACK 5 transmitted
+0.601665
+Packet 6 received with 46 data bytes
+packet transmitted by the client is assigned
+
+Packet 6 delivered to user
+0.601743
+0.601759
+ACK 6 transmitted
+0.602174
+Packet 7 received with 44 data bytes
+a sequence number in the range 0 through 15.
+Packet 7 delivered to user
+0.602260
+0.602268
+ACK 7 transmitted
+End of Transmission Packet with sequence number 8 received with 0 data bytes
+Number of data packets received successfully:40
+Total number of data bytes received which are delivered to user:1561
+Total number of duplicate data packets received:0
+Number of data packets received but dropped due to loss:0
+Total number of data packets received:40
+Number of ACKs transmitted without loss:40
+Number of ACKs generated but dropped due to loss:0
+Total number of ACKs generated:40
+bash-3.2$ ./[K[K./server
+please enter configuration:
+Packet Loss Rate:0.2
+Packet Delay:1
+ACK Loss Rate:0
+Waiting for incoming messages on port 65100
+
+0.000999
+Packet 0 lost
+0.001719
+Packet 1 lost
+0.001852
+Packet 2 lost
+0.001938
+Packet 3 lost
+0.000470
+Packet 0 lost
+0.000610
+Packet 1 lost
+0.000657
+Packet 2 lost
+0.000806
+Packet 3 lost
+0.000477
+Packet 0 lost
+0.000650
+Packet 1 lost
+0.000697
+Packet 2 lost
+0.000744
+Packet 3 lost
+0.000423
+Packet 0 lost
+0.000579
+Packet 1 lost
+0.000626
+Packet 2 lost
+0.000665
+Packet 3 lost
+0.000329
+Packet 0 lost
+0.000517
+Packet 1 lost
+0.000634
+Packet 2 lost
+0.000697
+Packet 3 lost
+0.000470
+Packet 0 lost
+0.000626
+Packet 1 lost
+0.000681
+Packet 2 lost
+0.000728
+Packet 3 lost
+0.000462
+Packet 0 lost
+0.000626
+Packet 1 lost
+0.000673
+Packet 2 lost
+0.000720
+Packet 3 lost
+0.000485
+Packet 0 lost
+0.000650
+Packet 1 lost
+0.000704
+Packet 2 lost
+0.000744
+Packet 3 lost
+0.000399
+Packet 0 lost
+0.000626
+Packet 1 lost
+0.000783
+Packet 2 lost
+0.000986
+Packet 3 lost
+0.000454
+Packet 0 lost
+0.000626
+Packet 1 lost
+0.000681
+Packet 2 lost
+0.000720
+Packet 3 lost
+0.000407
+Packet 0 lost
+0.000712
+Packet 1 lost
+0.000798
+Packet 2 lost
+0.000916
+Packet 3 lost
+0.000383
+Packet 0 lost
+0.000681
+Packet 1 lost
+0.000751
+Packet 2 lost
+0.000916
+Packet 3 lost
+0.000423
+Packet 0 lost
+0.000704
+Packet 1 lost
+0.000806
+Packet 2 lost
+0.000963
+Packet 3 lost
+0.000704
+Packet 0 lost
+0.000877
+Packet 1 lost
+0.000939
+Packet 2 lost
+0.000994
+Packet 3 lost
+0.000477
+Packet 0 lost
+0.000650
+Packet 1 lost
+0.000704
+Packet 2 lost
+0.000744
+Packet 3 lost
+0.000485
+Packet 0 lost
+0.000657
+Packet 1 lost
+0.000704
+Packet 2 lost
+0.000751
+Packet 3 lost
+0.000477
+Packet 0 lost
+0.000650
+Packet 1 lost
+0.000697
+Packet 2 lost
+0.000744
+Packet 3 lost
+0.000462
+Packet 0 lost
+0.000634
+Packet 1 lost
+0.000697
+Packet 2 lost
+0.000736
+Packet 3 lost
+0.000477
+Packet 0 lost
+0.000650
+Packet 1 lost
+0.000697
+Packet 2 lost
+0.000744
+Packet 3 lost
+0.000399
+Packet 0 lost
+0.000587
+Packet 1 lost
+0.000704
+Packet 2 lost
+0.000947
+Packet 3 lost
+0.000493
+Packet 0 lost
+0.000642
+Packet 1 lost
+0.000697
+Packet 2 lost
+0.000736
+Packet 3 lost
+0.000407
+Packet 0 lost
+0.000563
+Packet 1 lost
+0.000618
+Packet 2 lost
+0.000665
+Packet 3 lost
+0.000344
+Packet 0 lost
+0.000712
+Packet 1 lost
+0.000814
+Packet 2 lost
+0.000861
+Packet 3 lost
+0.000391
+Packet 0 lost
+0.000704
+Packet 1 lost
+0.000790
+Packet 2 lost
+0.000970
+Packet 3 lost
+0.000477
+Packet 0 lost
+0.000642
+Packet 1 lost
+0.000697
+Packet 2 lost
+0.000744
+Packet 3 lost
+0.000407
+Packet 0 lost
+0.000626
+Packet 1 lost
+0.000814
+Packet 2 lost
+0.001049
+Packet 3 lost
+0.000493
+Packet 0 lost
+0.000665
+Packet 1 lost
+0.000720
+Packet 2 lost
+0.000775
+Packet 3 lost
+0.000423
+Packet 0 lost
+0.000603
+Packet 1 lost
+0.000759
+Packet 2 lost
+0.000853
+Packet 3 lost
+0.000391
+Packet 0 lost
+0.000697
+Packet 1 lost
+0.000767
+Packet 2 lost
+0.000908
+Packet 3 lost
+0.000391
+Packet 0 lost
+0.000673
+Packet 1 lost
+0.000783
+Packet 2 lost
+0.000931
+Packet 3 lost
+0.000376
+Packet 0 lost
+0.000673
+Packet 1 lost
+0.000744
+Packet 2 lost
+0.000978
+Packet 3 lost
+0.000368
+Packet 0 lost
+0.000673
+Packet 1 lost
+0.000775
+Packet 2 lost
+0.000830
+Packet 3 lost
+0.000376
+Packet 0 lost
+0.000665
+Packet 1 lost
+0.000744
+Packet 2 lost
+0.000790
+Packet 3 lost
+0.000376
+Packet 0 lost
+0.000736
+Packet 1 lost
+0.000837
+Packet 2 lost
+0.000884
+Packet 3 lost
+0.000391
+Packet 0 lost
+0.000704
+Packet 1 lost
+0.000790
+Packet 2 lost
+0.000963
+Packet 3 lost
+0.000352
+Packet 0 lost
+0.000681
+Packet 1 lost
+0.000775
+Packet 2 lost
+0.000822
+Packet 3 lost
+0.000337
+Packet 0 lost
+0.000501
+Packet 1 lost
+0.000728
+Packet 2 lost
+0.000798
+Packet 3 lost
+0.000337
+Packet 0 lost
+0.000524
+Packet 1 lost
+0.000712
+Packet 2 lost
+0.000798
+Packet 3 lost
+0.000399
+Packet 0 lost
+0.000563
+Packet 1 lost
+0.000626
+Packet 2 lost
+0.000673
+Packet 3 lost
+0.000368
+Packet 0 lost
+0.000673
+Packet 1 lost
+0.000767
+Packet 2 lost
+0.000814
+Packet 3 lost
+0.000571
+Packet 0 lost
+0.000712
+Packet 1 lost
+0.000759
+Packet 2 lost
+0.000806
+Packet 3 lost
+0.000383
+Packet 0 lost
+0.000736
+Packet 1 lost
+0.000814
+Packet 2 lost
+0.000861
+Packet 3 lost
+0.000376
+Packet 0 lost
+0.000697
+Packet 1 lost
+0.000783
+Packet 2 lost
+0.000947
+Packet 3 lost
+0.000477
+Packet 0 lost
+0.000610
+Packet 1 lost
+0.000657
+Packet 2 lost
+0.000798
+Packet 3 lost
+0.000383
+Packet 0 lost
+0.000634
+Packet 1 lost
+0.000814
+Packet 2 lost
+0.001143
+Packet 3 lost
+0.000399
+Packet 0 lost
+0.000595
+Packet 1 lost
+0.000736
+Packet 2 lost
+0.000963
+Packet 3 lost
+^C
+bash-3.2$ exit
+exit
+
+Script done on Thu Dec  3 13:34:44 2015

@@ -1,0 +1,170 @@
+The format of an acknowledgement packet that is returned from the server to the
+client is shown in the figure below: 
+
+\begin{verbatim}
+    <----------------- 16 bits (2 bytes) ------------------>
+    --------------------------------------------------------
+    |                   ACK Sequence Number                |
+    --------------------------------------------------------
+\end{verbatim}
+
+Acknowledgements are transmitted
+(from the server to the client)
+as separate packets of fixed length, 2 bytes.
+The first and only field of the ACK packet is the
+ACK sequence number, which may be
+in the range 0 through 15. This is
+the sequence number of the data packet being
+acknowledged by this ACK.
+
+Once again, you must perform the conversion between
+network and host byte orders on both the transmitting
+and receiving ends.
+
+\vspace*{-0.1in}
+
+\begin{center}
+{\bf Server Actions}
+\end{center}
+
+The server also runs in a loop; however, it can use the regular
+blocking version of the server program. In addition to the server
+actions for the Go-Back-N protocol, we will introduce one additional
+function: simulating loss, errors, and delay. We will need to do
+this because UDP clients and servers running on the same host
+will almost never see such behavior.
+
+The actions of the server will be as follows:
+
+\begin{itemize}
+\item Start server loop.
+\item Wait for packet to arrive from client.
+\item If packet is received, check if Count field in packet is 0.
+If it is 0, this signifies an EOT packet, so quit loop.
+\item If packet is received, but Count field is not 0,
+this is a regular data packet. In this case, call the {\em simulate}
+function described below to simulate loss, errors, and delay.
+\item If {\em simulate} returns 0, then packet is lost or has errors;
+discard packet and return to start of loop.
+\item If {\em simulate} returns 1, then packet is correct. Process
+the packet according to the protocol actions of the 
+Go-Back-N protocol. Generate an ACK if required.
+\item After ACK is generated, call the function {\em ACKsimulate}
+to simulate ACK loss.
+\item If the function {\em ACKsimulate} returns 0, the ACK is lost,
+and is not transmitted. If the function returns 1, then transmit
+the ACK.
+\item End of loop.
+\end{itemize}
+
+{\bf Functions {\em simulate} and {\em ACKsimulate}:}
+
+In the server program, the function {\em simulate} simulates
+loss, errors, and delays in the reception of data packets from
+the client. Errors and loss are not distinguished from each other,
+as they both result in the packet being dropped.
+This function uses the configuration parameters
+{\em Packet Loss Rate} and {\em Packet Delay} which
+are read when the server starts (see below). 
+
+\begin{center}
+{\bf Output of your program}
+\end{center}
+
+At specific places in both your client and server 
+programs, you must print out specific
+messages. The symbol ``n'' below refers to the sequence number
+of the transmitted or received packet, and the symbol ``c''
+below refers to the count (number of data bytes) in the
+transmitted or received packet. 
+
+The messages to be printed by the client are:
+
+When a data packet numbered $n$ is sent by the client for the first time:\\
+\hspace*{0.2in}     {\em Packet n transmitted with c data bytes}\\
+When a data packet numbered $n$ is retransmitted by the client:\\
+\hspace*{0.2in}     {\em Packet n retransmitted with c data bytes}\\
+When a timeout expires:\\
+\hspace*{0.2in}     {\em Timeout expired for packet numbered $n$}\\
+When an ACK is received with number $n$:\\
+\hspace*{0.2in}     {\em ACK n received}\\
+When the ``End of Transmission''
+packet is sent:\\
+\hspace*{0.2in}     {\em End of Transmission Packet
+with sequence number n transmitted with c data bytes}\\
+
+The messages to be printed by the server are:
+
+When a data packet numbered $n$ is received correctly by the server for
+the first time:\\
+\hspace*{0.2in}     {\em Packet n received with c data bytes}\\
+When a data packet numbered $n$ is received correctly by the server,
+but is a duplicate or out-of-sequence packet:\\
+\hspace*{0.2in}     {\em Duplicate packet n received with c data bytes}\\
+When a data packet numbered $n$ is received by the server, but
+the {\em simulate} function causes it to be dropped:\\
+\hspace*{0.2in}     {\em Packet n lost}\\
+When contents of data packet numbered $n$ are delivered to the user,
+i.e., are stored in the output file:\\
+\hspace*{0.2in}     {\em Packet n delivered to user}\\
+When an ACK is sent with number $n$:\\
+\hspace*{0.2in}     {\em ACK n transmitted}\\
+When an ACK is generated, but is dropped by the function {\em ACKsimulate}:\\
+\hspace*{0.2in}     {\em ACK n lost}\\
+When the ``End of Transmission''
+packet is received:\\
+\hspace*{0.2in}     {\em End of Transmission Packet 
+with sequence number n received with c data bytes}\\
+
+At the end, before terminating execution,
+the following statistics should be printed. Do not include
+the last special ``End of Transmission'' packet in the count
+of data packets in these statistics.
+
+
+\vspace*{-0.1in}
+
+\begin{center}
+{\bf Demo}
+\end{center}
+
+You will be asked to schedule a time after your submission
+to come in and give a demo of your programs. During the
+demo, we will run your programs under a variety of different
+loss and delay conditions. {\bf Your programs must not be
+modified in any way after you submit your project until the
+time the demo is completed.}
+
+\vspace*{-0.1in}
+
+\begin{center}
+{\bf Grading}
+\end{center}
+
+Your programs will be graded on correctness, proper
+output, readability, and documentation. 
+The grade distribution is as follows:
+
+\hspace*{1in} Correctness: 60 \%\\
+\hspace*{1in} Readability and Documentation: 20 \%\\
+\hspace*{1in} Proper Output and Testing: 20 \%\\
+
+Part of the Correctness grade will depend on how your program
+performs during the demo. As with Project 1,
+points for documentation will not be awarded lightly; we will be
+looking for meaningful variable and function names, good use of
+comments, good modular structure with appropriate use of functions,
+good programming style, and proper indentation.
+
+
+{\bf Deadline for submission: 
+Wednesday December 2, 11 pm.
+
+No late assignments will be accepted, because we will have
+to schedule times for demos.   No extensions will be granted
+for {\em any} reason. It is to be understood that computers and
+computing facilities are subject to failure, overload, unavailability,
+etc., so it is your responsibility to plan and execute your project
+work sufficiently in advance so as to meet the due date.}
+
+\end{document}

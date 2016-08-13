@@ -1,0 +1,39 @@
+\begin{center}
+{\bf PROGRAMMING PROJECT 2\\ }
+\end{center}
+
+%\vspace{0.3in}
+\noindent
+{\bf This project is an individual assignment and must be done
+independently by each student. No late submissions will be
+accepted for this project.}
+
+\noindent
+
+In this project, you will implement a Transport Layer protocol to transmit data
+with Reliable Data Transfer from a client (Sender) to a server (Receiver) in
+the presence of channel errors and loss.
+The protocol to be implemented by you is the Go-Back-N protocol. The protocol
+will be unidirectional in which data is sent in one direction only (client to
+server) with acknowledgements being
+sent in the reverse direction (server to client). Only positive ACKs are used.
+The transmission of packets will be done over UDP
+(that represents an unreliable network layer channel)
+using fixed UDP ports.
+
+
+\begin{verbatim}
+    <----------------- 16 bits (2 bytes) ------------------>
+    --------------------------------------------------------
+    |              Count (no. of data bytes)               |
+    --------------------------------------------------------
+    |                Packet Sequence Number                |
+    --------------------------------------------------------
+    |            Data Bytes      |          ...            |
+    --------------------------------------------------------
+\end{verbatim}
+
+The second field of the header is the
+packet sequence number. Each
+packet transmitted by the client is assigned
+a sequence number in the range 0 through 15.
